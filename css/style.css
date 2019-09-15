@@ -1,0 +1,324 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap'); */
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Roboto-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Roboto-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Roboto-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Roboto-Regular') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('../fonts/Roboto-Medium.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Roboto-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Roboto-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Roboto-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Roboto-Medium') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../fonts/Roboto-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Roboto-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Roboto-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Roboto-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Roboto-Bold') format('svg'); /* Legacy iOS */
+}
+
+body{
+    font-family: 'Roboto-Regular';
+    background-color:#f2f2f2;
+    color:#000;
+}
+
+.container{
+    padding: 0 10px;
+    max-width:900px;
+    margin:0 auto;
+}
+
+a:hover{
+    text-decoration: none;
+}
+i{
+    color:#707070;
+}
+i:hover,i:focus{
+    color:#000;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin:0;
+}
+
+.text-center{
+    text-align:center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.alignLeft{
+    float: left;
+}
+.alignRight{
+    float:right;
+    margin-left:auto;
+}
+
+.text-inline{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding:10px 0;
+}
+
+.text-inline > h1{
+    font-family: 'Roboto-Medium';
+    font-size:24px;
+    color:#070707;
+
+}
+
+.fa-list-ul{
+    font-size:16px;
+}
+
+#myInput {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+  
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li {
+  border-bottom: 1px solid #ddd;
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #070707;
+  align-items: center;
+  justify-content: right;
+}
+
+.note-content{
+  padding:0 60px 0 15px;
+  margin-top:10px;
+
+}
+  
+#myUL > li > a{
+  font-family: 'Roboto-Medium';
+  text-decoration: none;
+  font-size: 18px;
+  margin-right:auto;
+  color: black;
+}
+
+#myUL > li > .note-content > p{
+  font-family: 'Roboto-Regular';
+  font-size: 14px;
+  color:#555;
+  margin-left:22px;
+}
+
+#myUL li i{
+  color:#4d4dc3;
+  font-size:24px;
+  margin-right:10px;
+}
+
+#myUL li:hover:not(.header) {
+  background-color: #eee;
+}
+
+.edit-delete{
+  text-align: right;
+}
+
+.edit-delete > p{
+  font-family: 'Roboto-Regular';
+  font-size:14px;
+  padding:4px;
+  /* margin-bottom: 5px; */
+  color:#fdb305;
+  cursor: pointer;
+  display: inline;
+}
+
+.search{
+  width:100%;
+}
+
+.search-box{
+  display:flex;
+}
+
+.search-box > input{
+  flex:1;
+}
+
+.modal {
+    position: absolute;
+    z-index: 10000; /* 1 */
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.modal.is-visible {
+    visibility: visible;
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(0, 0%, 0%, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s;
+}
+
+.modal.is-visible .modal-overlay {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.modal-wrapper {
+  position: absolute;
+  z-index: 9999;
+  top: 6em;
+  left: 50%;
+  width: 32em;
+  margin-left: -16em;
+  background-color: #fff;
+  box-shadow: 0 0 1.5em hsla(0, 0%, 0%, 0.35);
+}
+
+.modal-transition {
+  transition: all 0.3s 0.12s;
+  transform: translateY(-10%);
+  opacity: 0;
+}
+
+.modal.is-visible .modal-transition {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-content {
+  padding: 16px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 6px 12px;
+  color: #555;
+  font-size:16px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.modal-close:hover, .modal-close:focus {
+  color:#070707;
+  outline: none;
+}
+
+.modal-content > *:first-child {
+  margin-top: 0;
+}
+
+.modal-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.plus{
+  padding:0;
+  border:0;
+  background-color: transparent;
+  position: fixed;
+  right:40px;
+  bottom:60px;
+  cursor: pointer;
+  z-index: 9999;
+}
+.plus:focus{
+  outline: none;
+}
+.plus > i{
+  font-size:50px;
+  color:#fdb305;
+}
+
+.add-note{
+  padding:15px;
+}
+.add-note > h3{
+  margin-bottom:15px;
+}
+
+.form-group{
+  width: 100%;
+}
+
+.form-control{
+  font-family: 'Roboto-Regular';
+  width: 92%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 6px 12px;
+  margin:0 auto 15px;
+  font-size: 14px;
+  color: #555;
+  border-radius:4px;
+}
+
+.title{
+  height: 25px;
+}
+
+.btn{
+  font-family: 'Roboto-Medium';
+  display: block;
+  padding:6px 20px;
+  text-align: center;
+  margin:10px auto 10px;
+  font-size:16px;
+  color:#070707;
+  border-radius:4px;
+  cursor: pointer;
+}
+
+.btn:focus{
+  outline: none;
+}
+
+.btn-save{
+  border:1px solid #fdb305;
+  background-color: #fdb305;
+}

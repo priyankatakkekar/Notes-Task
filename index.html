@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-inline">
+            <h1 class="alignLeft">Notes</h1>
+            <h4 class="alignRight"><a href=""><i class="fa fa-list-ul" aria-hidden="true"></i></a></h4>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="search">
+            <div class="search-box">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for titles"
+                    title="Type in a name">
+            </div>
+
+            <ul id="myUL">
+                <li>
+                    <i class="fa fa-comments align-left" aria-hidden="true"></i>
+                    <a href="#">Birthday Dates</a>
+                    <div class="align-right note-content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                    </div>
+                    <div class="edit-delete">
+                        <p class="edit-note">Edit</p>
+                        <p class="Delete-note" id="rmItem">Delete</p>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="wrapper">
+            <button class="modal-toggle plus"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+        </div>
+        <div class="modal">
+            <div class="modal-overlay modal-toggle"></div>
+            <div class="modal-wrapper modal-transition">
+                <button class="modal-close modal-toggle"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="modal-body">
+                    <div class="modal-content">
+                        <div class="add-note text-center">
+                            <h3>Add Note</h3>
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control title" name="title" id="inptitle" placeholder="TITLE" />
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="description" id="inpdescription"
+                                        placeholder="DESCRIPTION" rows="5"></textarea>
+                                </div>
+                                <button type="button" id="btnInsert" class="btn btn-save">SAVE</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <script src="js/jquery.js"></script>
+        <script src="js/script.js"></script>
+</body>
+
+</html>
